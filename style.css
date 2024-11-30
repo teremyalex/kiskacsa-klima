@@ -1,0 +1,426 @@
+body{
+	margin: 0;
+	font-size: 20px;
+	font-family: 'Raleway';
+	font-feature-settings: "lnum" 1;
+}
+.hero1{
+	background: url('img/hero1-bg.jpg') center center no-repeat;
+	background-size: cover;
+	padding: 70px 10px;
+}
+.hero1 > div{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.hero1 h3{
+	font-size: 60px;
+	margin: 0;
+}
+.header{
+	max-width: 1024px;
+	margin: 0 auto 100px;
+}
+.header p{
+	color: #7B7B7B;
+	margin: 0;
+}
+.header > div{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.header > div div{
+	width: 50%;
+	margin: 50px 0 0;
+	padding: 0 20px;
+	box-sizing: border-box;
+	position: relative;
+}
+.header > div > img{
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+}
+.cta{
+	display: inline-block;
+    background: black;
+    padding: 18px 56px;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}
+.hero1 h4 {
+    font-size: 36px;
+    max-width: 742px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+.problema{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.problema > div{
+	width: 22%;
+	margin: 0 0 30px;
+}
+.problema img{
+	border-radius: 50%;
+	display: block;
+	width: 70%;
+	margin: 0 auto;
+}
+.problema h5{
+	background: black;
+	color:white;
+	font-weight: 600;
+	text-align: center;
+	padding: 5px 0;
+	font-size: 20px;
+	margin: 20px 0 10px;
+	border-radius: 3px;
+}
+.problema p{
+	margin: 0;
+	color: #7B7B7B;
+}
+.megoldas{
+	max-width: 815px;
+	margin: 0 auto;
+	padding: 30px;
+	box-sizing: border-box;
+	background: white;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: 300;
+	font-size: 24px;
+}
+.megoldas img{
+	width: 155px;
+}
+.hero2{
+	padding: 40px 10px;
+}
+.hero2 > div{
+	max-width: 1024px;
+	margin: 0 auto;
+}
+.hero2 h3{
+	font-size: 60px;
+	text-align: center;
+}
+.hero2 img{
+	width: 100%;
+}
+.hero3{
+	background: url('img/kaja-hatter.png');
+	background-size: cover;
+	padding: 30px 0;
+}
+.hero3 > div{
+	max-width: 1024px;
+	margin: 0 auto;	
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+.hero3:nth-of-type(4) > div{
+	flex-direction: row-reverse;
+}
+.hero3 > div > div{
+	width: 50%;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.hero3 img{
+	display: block;
+	width:50%;
+}
+.hero3 h4{
+	font-size: 24px;
+	margin: 0;
+}
+.hero3 p, .hero3 ul{
+	font-size: 16px;
+	font-weight: 300;
+}
+.termekek{
+	background: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%),
+		url('img/kosar-bg.jpg') center center no-repeat;
+	background-size: cover;
+	padding: 70px 10px;
+}
+.termekek > div{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.termekek h3{
+	max-width: 1024px;
+	margin: 0 auto;
+	font-size: 60px;
+	text-align: center;
+}
+.termekek h4{
+	max-width: 1024px;
+	margin: 0 auto;
+	font-size: 40px;
+	text-align: center;
+}
+.termekek > div > div{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin:50px 0;
+}
+.termek{
+	width:23%;
+	background: white;
+	border-radius: 15px;
+	box-shadow: 5px 15px 30px -5px rgba(0,0,0,0.25);
+	padding: 20px;
+	box-sizing: border-box;
+	margin: 0;
+}
+.termek:hover img{
+	transform: scale(110%) translateY(-20px);
+	box-shadow: 0 20px 25px -10px rgba(0, 0, 0, 0.30);
+}
+.termek img {
+    display: block;
+    margin: -54px auto 25px;
+    box-shadow: 0 30px 18px -12px rgba(0, 0, 0, 0.30);
+	transition: 400ms cubic-bezier(0.55, 0.26, 0, 0.98)
+}
+.termek.meret1 img{
+	width: 223px;
+}
+.termek.meret2 img{
+	width: 198px;
+}
+.termek.meret3 img{
+	width: 191px;
+}
+.termek-nev{
+	font-size: 20px;
+	font-weight: 700;
+}
+.termek-suly{
+	font-size: 16px;
+	color: #7B7B7B;
+}
+.ar-cta{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    margin-top: 30px;
+}
+.termek-ar{
+	font-size: 20px;
+    font-weight: 700;
+    line-height: 0.8;
+}
+.termek-ar span{
+	font-size: 10px;
+	font-weight: 400;
+	color: #7B7B7B;
+}
+.termek .cta {
+    display: inline-block;
+    background: black;
+    padding: 14px 32px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}
+.velemenyek{
+	padding: 50px 0;
+	box-sizing: border-box;
+}
+.velemenyek h3{
+	margin: 0 auto;
+	font-size: 60px;
+	text-align: center;
+}
+.velemenyek > div{
+	max-width: 1024px;
+	margin: 70px auto 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.velemenyek > div > div{
+	width:50%;
+	position: relative;
+	margin: 0 0 40px;
+	padding: 0 20px;
+    box-sizing: border-box;
+}
+.velemenyek > div > div:last-child{
+	width:100%;
+}
+.velemenyek p {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    text-align: justify;
+}
+.csillag{
+	display: block;
+	margin: 0 auto;
+}
+cite{
+	display: block;
+	font-weight: 700;
+	text-align: center;
+	font-style: normal;
+}
+.aposztrof1 {
+    font-family: 'Agbalumo';
+    font-size: 250px;
+    position: absolute;
+    left: 0;
+    top: -135px;
+    color: #FDF3D1;
+    z-index: -1;
+}
+.aposztrof2 {
+    font-family: 'Agbalumo';
+    font-size: 250px;
+    position: absolute;
+    right: 0;
+    bottom: -155px;
+    color: #FDF3D1;
+    z-index: -1;
+}
+.garancia{
+	max-width: 760px !important;
+	margin: 70px auto 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 15px;
+	background: #FDF3D1;
+	padding: 30px;
+	box-sizing: border-box;
+}
+.garancia img{
+	width: 29%;
+}
+.garancia div {
+    width: 71% !important;
+    margin: 0 !important;
+}
+.garancia h4{
+	font-size: 32px;
+	margin: 0;
+}
+.garancia p{
+	font-size: 16px;
+	font-weight: 300;
+	text-align: justify;
+	margin: 0;
+}
+footer{
+	background: black;
+	color:white;
+	padding:50px 0;
+	box-sizing: border-box;
+}
+footer > div{
+	max-width: 1024px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	font-size: 16px;
+	font-weight: 300;
+}
+footer img{
+	display: block;
+	width:50%;
+}
+footer h4{
+	font-size: 32px;
+	margin: 0;
+}
+footer > div > div{
+	width:50%;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+@media (max-width:500px){
+.hero1 {
+    padding: 40px 10px;
+}
+.header > div div {
+    width: 100%;
+	margin: 20px 0 0;
+}
+.header > div > img {
+    width: 100%;
+}
+.header > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+.problema > div {
+    width: 100%;
+}
+.hero3 > div > div {
+    width: 100%;
+}
+.hero3 img {
+    width: 90%;
+    margin: 0 auto 20px;
+}
+.termek {
+    width: 100%;
+    margin: 0 0 40px;
+}
+.termekek h4 {
+    font-size: 30px;
+}
+.termekek > div > div {
+    margin: 50px 0 0;
+}
+.hero1 h3,
+.termekek h3,
+.velemenyek h3{
+    font-size: 35px;
+}
+.hero2 h3{
+	font-size: 29px;
+}
+.hero1 h4 {
+    font-size: 24px;
+}
+.velemenyek > div > div {
+    width: 100%;
+}
+.garancia div {
+    width: 100% !important;
+}
+.garancia h4 {
+    font-size: 28px;
+}
+.garancia img {
+    width: 60%;
+    margin: 0 auto;
+}
+footer img {
+    width: 100%;
+}
+footer > div > div {
+    width: 100%;
+}
+}
