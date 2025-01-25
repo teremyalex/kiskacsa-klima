@@ -9,10 +9,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+
+<!-- Meta Pixel Code -->
+<script>
+	!function(f,b,e,v,n,t,s){
+		if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)
+	}
+	(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '1084856385902923');
+	fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1084856385902923&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 	
 </head>
 
 <body>
+
+<!-- Kosár popup -->
+<div id="succes-cart">A termék kosárba rakva.</div>
+<!-- Alert popup -->
+<div id="alert-cart"></div>
 	
 <section class="hero1">
 	<div>
@@ -139,152 +160,280 @@
 			</ul>
 			<a class="cta" href="#kosar">Érdekel</a>
 		</div>
-		<img src="img/kiskacsa.png">
+		<img src="img/errecom.png">
 	</div>
 </section>
 
-<section class="termekek">
+<section class="termekek" id="kosar">
 	<div>
-		<h3>3 db <span style="color:#DF8929;">YOURMÉÉ tészta</span> vásárlása esetén -10% kedvezményt kap</h3>
-		<div>
-			<div class="termek meret1">
-				<img src="img/szelesmetelt.png">
-				<div class="termek-nev">Yourméé szélesmetélt</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
-				</div>
-			</div>
-
-			<div class="termek meret1">
-				<img src="img/fodrocska.png">
-				<div class="termek-nev">Yourméé fodrocska</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
-				</div>
-			</div>
-
-			<div class="termek meret1">
-				<img src="img/spagetti.png">
-				<div class="termek-nev">Yourméé spagetti</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
-				</div>
-			</div>
-
-			<div class="termek meret2">
-				<img src="img/cernametelt.png">
-				<div class="termek-nev">Yourméé cérnametélt</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
-				</div>
-			</div>
-		</div>
-
-		<h4>5 db esetén -15% kedvezményt kap</h4>
+		<h3>Válaszd ki számodra a <span style="color:#FFA100;">tökéletes Klímát!</span></h3>
 
 		<div>
-			<div class="termek meret2">
-				<img src="img/orso.png">
-				<div class="termek-nev">Yourméé orsó</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
+
+			<div class="termek">
+				<img class="termek-kep" src="img/ande.png">
+				<div class="termek-cat">Hűtés + Fűtés</div>
+				<div class="termek-nev">Ande Quantum 2.5 kW</div>
+				<div class="termek-ar">215 000 Ft</div>
+				<ul>
+					<li>H-tarifa kompatibilitás</li>
+					<li>Fűtés -25°C külső hőmérsékletig</li>
+					<li>5 év garancia</li>
+				</ul>
+				<div class="termek-split">
+					<h5>Beltéri egységek száma (Split)</h5>
+					<div class="termek-qty">
+						<button class="minus-btn" type="button" onclick="changeQty(0, -1)">-</button>
+						<input id="termek0-qty" type="text" value="1" class="quantity-input" readonly>
+						<button class="plus-btn" type="button" onclick="changeQty(0, 1)">+</button>
+					</div>
 				</div>
+				<div class="termek-szereles">
+					<h5>Szerelési csomag <span>(nem kötelező)</span></h5>
+					<p>A klímához szükséges szerelési alkatrészek.</p>
+					<h6>A beltéri és kültéri egység közötti távolság (méter)</h6>
+					<div id="termek0-szereles-mennyiseg" class="termek-szereles-mennyiseg">
+						<div class="szereles-qty">
+							<button class="minus-btn" type="button" onclick="szerelesQty(0, 0, -1)">-</button>
+							<input id="termek0-szereles0-qty" type="text" value="0" class="quantity-input" readonly>
+							<button class="plus-btn" type="button" onclick="szerelesQty(0, 0, 1)">+</button>
+						</div>
+					</div>
+					<div id="szereles0-ar" class="termek-szereles-ar" data-total="0">+ <span>0</span> Ft</div>
+				</div>
+
+				<button class="kosar-gomb" onclick="addToCart(0, 279, 'Ande Quantum 2.5 kW', 215000, Number(document.getElementById('termek0-qty').value), 'ande.png')"><img	src="img/circle-plus-solid.svg">Kosárba</button>
 			</div>
 
-			<div class="termek meret2">
-				<img src="img/penne.png">
-				<div class="termek-nev">Yourméé penne</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
+
+			<div class="termek">
+				<img class="termek-kep" src="img/ande.png">
+				<div class="termek-cat">Hűtés + Fűtés</div>
+				<div class="termek-nev">Ande Quantum 3.5 kW</div>
+				<div class="termek-ar">225 000 Ft</div>
+				<ul>
+					<li>H-tarifa kompatibilitás</li>
+					<li>Fűtés -25°C külső hőmérsékletig</li>
+					<li>5 év garancia</li>
+				</ul>
+				<div class="termek-split">
+					<h5>Beltéri egységek száma (Split)</h5>
+					<div class="termek-qty">
+						<button class="minus-btn" type="button" onclick="changeQty(1, -1)">-</button>
+						<input id="termek1-qty" type="text" value="1" class="quantity-input" readonly>
+						<button class="plus-btn" type="button" onclick="changeQty(1, 1)">+</button>
+					</div>
 				</div>
+				<div class="termek-szereles">
+					<h5>Szerelési csomag <span>(nem kötelező)</span></h5>
+					<p>A klímához szükséges szerelési alkatrészek.</p>
+					<h6>A beltéri és kültéri egység közötti távolság (méter)</h6>
+					<div id="termek1-szereles-mennyiseg" class="termek-szereles-mennyiseg">
+						<div class="szereles-qty">
+							<button class="minus-btn" type="button" onclick="szerelesQty(1, 0, -1)">-</button>
+							<input id="termek1-szereles0-qty" type="text" value="0" class="quantity-input" readonly>
+							<button class="plus-btn" type="button" onclick="szerelesQty(1, 0, 1)">+</button>
+						</div>
+					</div>
+					<div id="szereles1-ar" class="termek-szereles-ar" data-total="0">+ <span>0</span> Ft</div>
+				</div>
+
+				<button class="kosar-gomb" onclick="addToCart(1, 280, 'Ande Quantum 3.5 kW', 225000, Number(document.getElementById('termek1-qty').value), 'ande.png')"><img	src="img/circle-plus-solid.svg">Kosárba</button>
 			</div>
 
-			<div class="termek meret3">
-				<img src="img/szarvacska.png">
-				<div class="termek-nev">Yourméé szarvacska</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
+			<div class="termek">
+				<img class="termek-kep" src="img/ande.png">
+				<div class="termek-cat">Hűtés + Fűtés</div>
+				<div class="termek-nev">Ande Quantum 5 kW</div>
+				<div class="termek-ar">349 000 Ft</div>
+				<ul>
+					<li>H-tarifa kompatibilitás</li>
+					<li>Fűtés -25°C külső hőmérsékletig</li>
+					<li>5 év garancia</li>
+				</ul>
+				<div class="termek-split">
+					<h5>Beltéri egységek száma (Split)</h5>
+					<div class="termek-qty">
+						<button class="minus-btn" type="button" onclick="changeQty(2, -1)">-</button>
+						<input id="termek2-qty" type="text" value="1" class="quantity-input" readonly>
+						<button class="plus-btn" type="button" onclick="changeQty(2, 1)">+</button>
+					</div>
 				</div>
+				<div class="termek-szereles">
+					<h5>Szerelési csomag <span>(nem kötelező)</span></h5>
+					<p>A klímához szükséges szerelési alkatrészek.</p>
+					<h6>A beltéri és kültéri egység közötti távolság (méter)</h6>
+					<div id="termek2-szereles-mennyiseg" class="termek-szereles-mennyiseg">
+						<div class="szereles-qty">
+							<button class="minus-btn" type="button" onclick="szerelesQty(2, 0, -1)">-</button>
+							<input id="termek2-szereles0-qty" type="text" value="0" class="quantity-input" readonly>
+							<button class="plus-btn" type="button" onclick="szerelesQty(2, 0, 1)">+</button>
+						</div>
+					</div>
+					<div id="szereles2-ar" class="termek-szereles-ar" data-total="0">+ <span>0</span> Ft</div>
+				</div>
+
+				<button class="kosar-gomb" onclick="addToCart(2, 281, 'Ande Quantum 5 kW', 349000, Number(document.getElementById('termek2-qty').value), 'ande.png')"><img	src="img/circle-plus-solid.svg">Kosárba</button>
 			</div>
 
-			<div class="termek meret3">
-				<img src="img/sodrott.png">
-				<div class="termek-nev">Yourméé sodrott csiga</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
+			<div class="termek">
+				<img class="termek-kep klimatisztito" src="img/errecom-piros.png">
+				<div class="termek-cat">Klímatisztítás</div>
+				<div class="termek-nev">Errecom Power Clean Out</div>
+				<div class="termek-ar">5 150 Ft</div>
+				<div class="termek-split">
+					<h5 style="font-size: 18px;">Klímatisztító Aerosol Kültéri Egységhez</h5>
+					<div class="termek-qty">
+						<button class="minus-btn" type="button" onclick="changeQty(3, -1)">-</button>
+						<input id="termek3-qty" type="text" value="1" class="quantity-input" readonly>
+						<button class="plus-btn" type="button" onclick="changeQty(3, 1)">+</button>
+					</div>
 				</div>
+
+				<button class="kosar-gomb" onclick="addToCart(3, 285, 'Errecom Power Clean Out', 5150, Number(document.getElementById('termek3-qty').value), 'errecom-piros.png')"><img	src="img/circle-plus-solid.svg">Kosárba</button>
 			</div>
+
+			<div class="termek">
+				<img class="termek-kep klimatisztito" src="img/errecom-kek.png">
+				<div class="termek-cat">Klímatisztítás</div>
+				<div class="termek-nev">Errecom Evaporator Cleaner Foam</div>
+				<div class="termek-ar">4 500 Ft</div>
+				<div class="termek-split">
+					<h5 style="font-size: 18px;">Habos klímatisztitó beltéri egységhez</h5>
+					<div class="termek-qty">
+						<button class="minus-btn" type="button" onclick="changeQty(4, -1)">-</button>
+						<input id="termek4-qty" type="text" value="1" class="quantity-input" readonly>
+						<button class="plus-btn" type="button" onclick="changeQty(4, 1)">+</button>
+					</div>
+				</div>
+
+				<button class="kosar-gomb" onclick="addToCart(4, 286, 'Errecom Evaporator Cleaner Foam', 4500, Number(document.getElementById('termek4-qty').value), 'errecom-kek.png')"><img src="img/circle-plus-solid.svg">Kosárba</button>
+			</div>
+
+			<div class="termek">
+				<img class="termek-kep klimatisztito" src="img/mosozsak.png">
+				<div class="termek-cat">Klímatisztítás</div>
+				<div class="termek-nev">Védőfólia Mosózsák Klímatisztításhoz</div>
+				<div class="termek-ar">5 588 Ft</div>
+				<div class="termek-split">
+					<h5 style="font-size: 18px;">Beltéri egység tisztításához</h5>
+					<div class="termek-qty">
+						<button class="minus-btn" type="button" onclick="changeQty(5, -1)">-</button>
+						<input id="termek5-qty" type="text" value="1" class="quantity-input" readonly>
+						<button class="plus-btn" type="button" onclick="changeQty(5, 1)">+</button>
+					</div>
+				</div>
+
+				<button class="kosar-gomb" onclick="addToCart(5, 287, 'Védőfólia Mosózsák Klímatisztításhoz', 5588, Number(document.getElementById('termek5-qty').value), 'mosozsak.png')"><img src="img/circle-plus-solid.svg">Kosárba</button>
+			</div>
+
+
 		</div>
-
-		<h4>10 db esetén -20% kedvezményt kap</h4>
-
-		<div>
-			<div class="termek meret3">
-				<img src="img/ludgege.png">
-				<div class="termek-nev">Yourméé lúdgége csiga</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
-				</div>
-			</div>
-
-			<div class="termek meret3">
-				<img src="img/kezitarhonya.png">
-				<div class="termek-nev">Yourméé kézitarhonya</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
-				</div>
-			</div>
-
-			<div class="termek meret3">
-				<img src="img/eperlevel.png">
-				<div class="termek-nev">Yourméé eperlevél</div>
-				<div class="termek-suly">300 g</div>
-				<div class="ar-cta">
-					<div class="termek-ar">1 990 Ft<br><span>6 633 Ft/kg</span></div>
-					<a class="cta" href="">Kosárba</a>
-				</div>
-			</div>
-		</div>
-
-		<p style="text-align: center;">Allergén anyagok: a tésztáink glutént és tojást (fürjtojást) tartalmaznak.</p>
 
 	</div>
 </section>
-	
-<footer>
-	<div>
-		<img src="img/rolunk.jpg">
-		<div>
-			<h4>Rólunk</h4>
-			<p>2014 óta elkötelezetten foglalkozunk fürjekkel, fürjtojással és ezek feldolgozásával saját tulajdonú nyíregyházi baromfitelepen. A kezdetektől fogva hiszünk abban, hogy az emberek arra törekszenek, hogy örömet szerezzenek maguknak és szeretteiknek. Ezt a hitet formáltuk küldetésünkké, amikor létrehoztuk a <strong>Yourméé</strong> élelmiszermárkát.</p>
-			<p>Hiszünk abban, hogy a minőségi, egészséges ételek valódi élményt nyújtanak. Az elmúlt tíz év tapasztalataira építve fejlesztettük termékeinket, és ma Magyarország legnagyobb fürjtelepének büszke tulajdonosai vagyunk, ahol minden részletre gondosan odafigyelünk.</p>
-			<p>Szakértelmünket számos szakmai lap elismerte, és már nemzetközi szinten is megkeresnek minket tanácsért. Büszkék vagyunk arra, hogy olyan nagyvállalatok, mint a Telekom, is látják bennünk az értéket és a jövőbeli lehetőségeket. Ez még csak a kezdet. Számtalan új, innovatív fürjtojás alapú terméken dolgozunk, amelyeket a következő években fogunk bemutatni. </p>
-			<p>Csatlakozz Te is küldetésünkhöz, legyél Te is <strong>Yourméé</strong>!</p>
-		</div>	
-		
-		
-	</div>	
-</footer>	
+
+<section id="form" class="form">
+
+	<h3>Megrendelés</h3>
+	<p>Töltse ki az alábbi űrlapot, és kollégáink hamarosan felveszik Önnel a kapcsolatot, hogy megkezdjük a kényelmesebb és gazdaságosabb otthon felé vezető utat!</p>
+	<div class="rendeles">
+
+		<div class="kosar">
+			<div id="kosarTermekek">
+				<div class="emptyCart"><img src="img/cart.svg"><br>A kosár üres!</div>
+			</div>
+			<div class="osszeg"><span id="totalAmount"></span></div>
+			<div class="kosar-promo">
+				<h4>Ne várjon tovább!</h4>
+				<p>A magas gázszámlák már most is komoly terhet jelentenek. Miért költene többet, amikor a klíma egyszerre nyújt költséghatékony és környezetbarát megoldást?</p>
+				<p>Forduljon hozzánk bizalommal – legyen szó lakossági vagy irodai klímaszerelésről, a Kiskacsa Klíma mindig a legjobb megoldást kínálja!</p>
+				<img src="img/kiskacsa.png">
+			</div>
+		</div>
+
+		<div class="rendeles-form">
+
+			<div id="theForm">
+				<label>NÉV</label>
+				<input type="text" name="name" id="name" required="">
+				<label>E-MAIL</label>
+				<input type="text" name="email" id="email" required="">
+				<label>TELEFON</label>
+				<input type="text" name="phone" id="phone" required="">
+				<label style="display: block; margin: 20px 0 10px; font-weight: 600;">Számlázási cím</label>
+				<div class="iranyitoszam">
+					<label>ÍRÁNYÍTÓSZÁM</label>
+					<input type="text" name="billing_zip" id="billing_zip" required="">
+				</div>
+				<div class="varos">
+					<label>VÁROS</label>
+					<input type="text" name="billing_city" id="billing_city" required="">
+				</div>
+				<label>CÍM</label>
+				<input type="text" name="billing_address" id="billing_address" required="">
+
+
+				<input type="checkbox" id="myCheck" onclick="myFunction()">
+				<label>Másik címre kérem a szállítást</label>
+
+				<div id="text" style="display: none; margin-top:20px;">
+					<label style="display: block; margin: 20px 0 10px; font-weight: 600;">Szállítási cím</label>
+					<div class="iranyitoszam">
+						<label>ÍRÁNYÍTÓSZÁM</label>
+						<input type="text" name="shipping_zip" id="shipping_zip">
+					</div>
+					<div class="varos">
+						<label>VÁROS</label>
+						<input type="text" name="shipping_city" id="shipping_city">
+					</div>
+					<label>CÍM</label>
+					<input type="text" name="shipping_address" id="shipping_address">
+				</div>
+				<div>
+					<label>MEGJEGYZÉS</label>
+					<input type="text" name="message" id="message">
+				</div>
+				<div class="radio-label">
+					<label onclick="updateTotalAmount()">
+						<input type="radio" name="radio-payment" value="1" data-price="0" />
+						<span>Utánvétel</span><!--<br><span class="szallitasi-koltseg">+1000 Ft</span>-->
+					</label>
+					<label onclick="updateTotalAmount()">
+						<input type="radio" name="radio-payment" value="2" />
+						<span>Banki átutalás</span>
+					</label>
+					<!--<label onclick="updateTotalAmount()">
+						<input type="radio" name="radio-payment" value="3" />
+						<span>Bankkártya</span>
+					</label>-->
+				</div>
+				<!--<div class="radio-label">
+					<label onclick="updateTotalAmount()">
+						<input type="radio" name="radio-shipping" value="Hazhozszallitas" data-price="0" />
+						<span>Házhozszállítás</span><br><span class="szallitasi-koltseg">+1590 Ft</span>
+					</label>
+					<label onclick="updateTotalAmount()">
+                        <input type="radio" name="radio-shipping" value="GLS" data-price="1490" />
+                        <span>GLS</span><br><span class="szallitasi-koltseg">+1490 Ft</span>
+                    </label>
+					<label onclick="updateTotalAmount()">
+						<input type="radio" name="radio-shipping" value="FOXPOST" data-price="0" />
+						<span>Foxpost</span><br><span class="szallitasi-koltseg">+1290 Ft</span>
+					</label>
+				</div>-->
+				<iframe frameborder="0" loading="lazy" src="https://cdn.foxpost.hu/apt-finder/v1/app/" width="100%" height="600px" id="foxpost" style="display:none;"></iframe>
+				<input type="hidden" name="data[fp_automata]" id="foxpostData">
+
+
+				<p style="font-size: 12px; text-align: left;">A megrendelés elküldésével elfogadom az <a style="color:#0F2846;" href="https://www.kiskacsaklima.hu/aszf" target="_blank">ÁSZF</a> és az <a style="color:#0F2846;" href="https://www.kiskacsaklima.hu/avt" target="_blank">Adatkezelési tájékoztatóban</a> foglaltakat.</p>
+				<button class="rendeles-gomb" type="button" onclick="postData()">Megrendelem</button>
+			</div>
+		</div>
+	</div>
+</section>
 	
 </body>
+
+<script src="dist/index.js"></script>
 </html>
