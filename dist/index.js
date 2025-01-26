@@ -54,9 +54,12 @@ function changeQty(index, change) {
         const newDiv = document.createElement("div");
         newDiv.classList.add("szereles-qty");
         newDiv.innerHTML = `
-        <button class="minus-btn" type="button" onclick="szerelesQty(${index}, ${i}, -1)">-</button>
-        <input id="termek${index}-szereles${i}-qty" type="text" value="0" class="quantity-input" readonly>
-        <button class="plus-btn" type="button" onclick="szerelesQty(${index}, ${i}, 1)">+</button>
+        <div class="szereles-qty-title">${i + 1}. Beltéri egység távolsága</div>
+        <div class="szereles-qty-input">
+            <button class="minus-btn" type="button" onclick="szerelesQty(${index}, ${i}, -1)">-</button>
+            <input id="termek${index}-szereles${i}-qty" type="text" value="0" class="quantity-input" readonly>
+            <button class="plus-btn" type="button" onclick="szerelesQty(${index}, ${i}, 1)">+</button>
+        </div>
     `;
         szerelesContainer.appendChild(newDiv);
     }

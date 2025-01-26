@@ -423,6 +423,15 @@ cite{
 }
 .szereles-qty{
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.szereles-qty-title{
+	font-size: 14px;
+}
+.szereles-qty-input{
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: linear-gradient(27deg, #FB8B02, #FBDA04);
@@ -430,7 +439,7 @@ cite{
 	height: 40px;
 	border-radius: 10px;
 }
-.szereles-qty button{
+.szereles-qty-input button{
 	width: 40%;
 	text-align: center;
 	color: #030303;
@@ -443,7 +452,7 @@ cite{
 	cursor: pointer;
 	-webkit-appearance: none;
 }
-.szereles-qty input {
+.szereles-qty-input input {
 	width: 15%;
 	text-align: center;
 	font-family: 'Quicksand', sans-serif;
